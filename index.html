@@ -5,13 +5,144 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <title>TOP To Do</title>
   </head>
   <body>
+    <header>
+      <img src="./assets/static/logo.png" alt="" srcset="" />
+      <h1>TOP To Do</h1>
+    </header>
+    <main>
+      <section class="side-panel">
+        <section class="views">
+          <h3>Views</h3>
+          <ul>
+            <li>Home</li>
+            <li>Today</li>
+            <li>Week</li>
+          </ul>
+        </section>
+        <section class="projects">
+          <h3>Projects</h3>
+          <ul class="projects-list">
+            <li>Project-1</li>
+            <li>Project-2</li>
+            <li>Project-3</li>
+            <li>Project-4</li>
+          </ul>
+        </section>
+        <div class="add-project">
+          <button>New Project</button>
+        </div>
+      </section>
+      <section class="todo-container">
+        <h2 class="todo-project">Home</h2>
+        <div class="add-task">
+          <button>New Task</button>
+        </div>
+        <div class="todo-list">
+          <table>
+            <tr>
+              <th>Task</th>
+              <th>Due Date</th>
+              <th>Priority</th>
+              <th>Status</th>
+            </tr>
+            <tr class="todo-task">
+              <td>Task-1</td>
+              <td>01/01/2020</td>
+              <td>High</td>
+              <td>Pending</td>
+              <td><span class="material-icons-outlined"> done </span></td>
+              <td><span class="material-icons-outlined"> delete </span></td>
+            </tr>
+            <tr class="todo-task">
+              <td>Task-2</td>
+              <td>01/01/2020</td>
+              <td>High</td>
+              <td>Pending</td>
+              <td><span class="material-icons-outlined"> done </span></td>
+              <td><span class="material-icons-outlined"> delete </span></td>
+            </tr>
+            <tr class="todo-task">
+              <td>Task-3</td>
+              <td>01/01/2020</td>
+              <td>High</td>
+              <td>Pending</td>
+              <td><span class="material-icons-outlined"> done </span></td>
+              <td><span class="material-icons-outlined"> delete </span></td>
+            </tr>
+            <tr class="todo-task">
+              <td>Task-4</td>
+              <td>01/01/2020</td>
+              <td>High</td>
+              <td>Pending</td>
+              <td><span class="material-icons-outlined"> done </span></td>
+              <td><span class="material-icons-outlined"> delete </span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section class="todo-task-form">
+        <h3>New Task</h3>
+        <form>
+          <div class="form-group">
+            <label for="task-name">Task Name</label>
+            <input type="text" id="task-name" />
+          </div>
+          <div class="form-group">
+            <label for="task-due-date">Due Date</label>
+            <input type="date" id="task-due-date" />
+          </div>
+          <div class="form-group">
+            <label for="task-priority">Priority</label>
+            <select id="task-priority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-status">Status</label>
+            <select id="task-status">
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-project">Project</label>
+            <select id="task-project">
+              <option value="Project-1">Project-1</option>
+              <option value="Project-2">Project-2</option>
+              <option value="Project-3">Project-3</option>
+              <option value="Project-4">Project-4</option>
+              <option value="None">None</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="task-description">Description</label>
+            <textarea id="task-description"></textarea>
+          </div>
+          <div class="form-group">
+            <button>Add Task</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>
+          Designed by Tauser
+          <a href="https://github.com/leituu"
+            ><img src="./assets/static/github.png" alt=""
+          /></a>
+        </p>
+      </div>
+    </footer>
     <script src="./app.js"></script>
   </body>
 </html>
