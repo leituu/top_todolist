@@ -1,0 +1,135 @@
+:root {
+  --color-1: hsla(0, 0%, 11%, 1);
+  --color-2: hsla(96, 7%, 86%, 1);
+  --color-3: hsla(52, 17%, 91%, 1);
+  --color-4: hsla(210, 13%, 94%, 1);
+  --color-5: hsla(240, 100%, 99%, 1);
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: var(--color-1);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  width: 50px;
+  height: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1 {
+  color: var(--color-5);
+  margin: 0;
+}
+
+main {
+  height: calc(100vh - 150px);
+  width: 100%;
+  display: flex;
+}
+
+.side-panel {
+  background-color: var(--color-2);
+  padding: 0 1rem;
+  width: 15rem;
+}
+
+.add-project {
+  display: block;
+}
+
+.add-project button {
+  display: block;
+  margin: auto;
+}
+
+.todo-container {
+  background-color: var(--color-3);
+  width: calc(100% - 15rem);
+  padding: 0 1rem;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid var(--color-2);
+}
+
+.task-name {
+  width: 12rem;
+  text-align: start;
+}
+
+.task-due-date {
+  width: 8rem;
+  text-align: center;
+}
+
+.task-priority {
+  width: 8rem;
+  text-align: center;
+}
+
+.task-status {
+  width: 8rem;
+  text-align: center;
+}
+
+.task-status-change {
+  width: 2rem;
+  text-align: center;
+}
+
+.task-status-change span:hover {
+  cursor: pointer;
+  color: lightblue;
+}
+
+.task-delete {
+  width: 2rem;
+  text-align: center;
+}
+
+.task-delete span:hover {
+  cursor: pointer;
+  color: red;
+}
+
+.todo-task-form {
+  display: none;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-logo {
+  width: 30px;
+  height: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
