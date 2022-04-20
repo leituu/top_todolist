@@ -20,7 +20,7 @@
       <section class="side-panel">
         <section class="views">
           <h3>Views</h3>
-          <ul>
+          <ul class="views-list">
             <li>Home</li>
             <li>Today</li>
             <li>Week</li>
@@ -103,16 +103,31 @@
           </table>
         </div>
       </section>
-      <section class="todo-task-form">
-        <h3>New Task</h3>
+      <section class="todo-project-form hidden">
         <form>
+          <h3>New Project</h3>
+          <div class="form-group">
+            <label for="task-name">Project Name</label>
+            <input type="text" id="task-name" />
+          </div>
+          <div class="form-group">
+            <button id="addNewTask">Add Task</button>
+          </div>
+          <div class="form-group">
+            <button id="cancelNewTask">Cancel</button>
+          </div>
+        </form>
+      </section>
+      <section class="todo-task-form hidden">
+        <form>
+          <h3>New Task</h3>
           <div class="form-group">
             <label for="task-name">Task Name</label>
             <input type="text" id="task-name" />
           </div>
           <div class="form-group">
             <label for="task-due-date">Due Date</label>
-            <input type="date" id="task-due-date" />
+            <input type="date" id="task-due-date" placeholder="date" />
           </div>
           <div class="form-group">
             <label for="task-priority">Priority</label>
@@ -130,21 +145,10 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="task-project">Project</label>
-            <select id="task-project">
-              <option value="Project-1">Project-1</option>
-              <option value="Project-2">Project-2</option>
-              <option value="Project-3">Project-3</option>
-              <option value="Project-4">Project-4</option>
-              <option value="None">None</option>
-            </select>
+            <button id="addNewTask">Add Task</button>
           </div>
           <div class="form-group">
-            <label for="task-description">Description</label>
-            <textarea id="task-description"></textarea>
-          </div>
-          <div class="form-group">
-            <button>Add Task</button>
+            <button id="cancelNewTask">Cancel</button>
           </div>
         </form>
       </section>
