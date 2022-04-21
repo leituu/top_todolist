@@ -5,8 +5,8 @@ import TaskLibrary from "./TaskLibrary.js";
 let library = new TaskLibrary();
 
 // views
-const views = document.querySelectorAll(".views-list li");
-const project = document.querySelector(".projects-list");
+const mainViews = document.querySelectorAll(".views-list li");
+const projectViews = document.querySelector(".projects-list");
 const viewTitle = document.querySelector(".todo-project");
 
 // buttons
@@ -20,8 +20,8 @@ const addTaskForm = document.querySelector(".todo-task-form");
 
 // form buttons & inputs
 // // inputs
-const projName = document.querySelector("#project-name");
-const taskTitle = document.querySelector("#task-name");
+const projectName = document.querySelector("#project-name");
+const taskName = document.querySelector("#task-name");
 const taskDesc = "";
 const taskPriority = document.querySelector("#task-priority");
 const taskDueDate = document.querySelector("#task-due-date");
@@ -34,13 +34,17 @@ const addTaskFormBtn = document.querySelector("#addNewTask");
 // task List
 const taskList = document.querySelector(".todo-list table tbody");
 
+// Listeners
+
+// DOM loads for the first time
 document.addEventListener("DOMContentLoaded", () => {
   // renders all tasks by default when loading the page
   const tasks = library.getTasks("Home");
   UI.renderTasks(tasks);
 });
 
-views.forEach((view) => {
+// Switch main views
+mainViews.forEach((view) => {
   view.addEventListener("click", (e) => {
     // changes the view
     viewTitle.innerHTML = view.innerText;
@@ -48,34 +52,39 @@ views.forEach((view) => {
   });
 });
 
-project.addEventListener("click", (e) => {
+// Switch project views
+projectViews.addEventListener("click", (e) => {
   // changes the project view
   viewTitle.innerHTML = e.target.innerText;
   UI.displayProjects(e.target.innerText, library);
 });
 
+// Show add project form
 addProjectBtn.addEventListener("click", (e) => {
   e.preventDefault();
   UI.showForm(addProjectForm);
 });
 
+// Add project
 addProjectFormBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  UI.addProject(projName.value);
+  UI.addProject(projectName.value);
   UI.hideForm(addProjectForm);
 });
 
+// Show add task form
 addTaskBtn.addEventListener("click", (e) => {
   e.preventDefault();
   UI.showForm(addTaskForm);
 });
 
+// Add task
 addTaskFormBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let taskTitleCap =
-    taskTitle.value.charAt(0).toUpperCase() + taskTitle.value.slice(1);
+  let taskNameCap =
+    taskName.value.charAt(0).toUpperCase() + taskName.value.slice(1);
   let task = new Task(
-    taskTitleCap,
+    taskNameCap,
     taskDesc,
     taskPriority.value,
     taskProject.innerText,
@@ -86,6 +95,7 @@ addTaskFormBtn.addEventListener("click", (e) => {
   UI.hideForm(addTaskForm);
 });
 
+// Close Project/Task form
 cancelBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -94,6 +104,7 @@ cancelBtn.forEach((btn) => {
   });
 });
 
+// change task status or remove task
 taskList.addEventListener("click", (e) => {
   if (e.target.innerText === "delete") {
     UI.removeTask(taskList, e.target.parentElement.parentElement);
