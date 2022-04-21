@@ -13,7 +13,7 @@ class Task {
     this.id = Math.floor(Math.random() * 1000);
   }
 
-  updateTaskStatus(status) {
+  setTaskStatus(status) {
     this.status = status;
   }
 

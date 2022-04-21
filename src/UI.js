@@ -9,6 +9,16 @@ class UI {
     UI.renderTasks(projects);
   }
 
+  static renderProjectList(library) {
+    const projectList = document.querySelector(".projects-list");
+    const projects = library.getProjects();
+    projects.forEach((project) => {
+      const li = document.createElement("li");
+      li.innerText = project;
+      projectList.appendChild(li);
+    });
+  }
+
   static renderTasks(tasks) {
     const tasksTable = document.querySelector(".todo-list table tbody");
     tasksTable.innerHTML = `
@@ -38,7 +48,7 @@ class UI {
 
   static addProject(name) {
     const projectList = document.querySelector(".projects-list");
-    let li = document.createElement("li");
+    const li = document.createElement("li");
     li.innerText = name;
     projectList.appendChild(li);
   }
@@ -77,7 +87,14 @@ class UI {
 
   static displayTaskInfo() {}
 
-  static changeTaskStatus() {}
+  static changeTaskStatus(id) {
+    const task = document.querySelector(`[data-id="${id}"] .task-status`);
+    if (task.innerText === "Completed") {
+      task.innerText = "Pending";
+    } else {
+      task.innerText = "Completed";
+    }
+  }
 
   static sortTasks() {}
 }

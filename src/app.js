@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // renders all tasks by default when loading the page
   const tasks = library.getTasks("Home");
   UI.renderTasks(tasks);
+  UI.renderProjectList(library);
 });
 
 // Switch main views
@@ -108,8 +109,16 @@ cancelBtn.forEach((btn) => {
 taskList.addEventListener("click", (e) => {
   if (e.target.innerText === "delete") {
     UI.removeTask(taskList, e.target.parentElement.parentElement);
+    library.removeTask(e.target.parentElement.parentElement.dataset.id);
   } else if (e.target.innerText === "done") {
-    console.log(e.target.innerText);
+    const currStatus = document.querySelector(
+      `[data-id="${e.target.parentElement.parentElement.dataset.id}"] .task-status`
+    ).innerText;
+    library.updateTaskStatus(
+      e.target.parentElement.parentElement.dataset.id,
+      currStatus
+    );
+    UI.changeTaskStatus(e.target.parentElement.parentElement.dataset.id);
   }
 });
 
