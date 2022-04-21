@@ -52,7 +52,7 @@
               <th class="task-priority">Priority</th>
               <th class="">Status</th>
             </tr>
-            <tr class="todo-task">
+            <!-- <tr class="todo-task">
               <td class="task-name">Task-1</td>
               <td class="task-due-date">01/01/2020</td>
               <td class="task-priority">High</td>
@@ -99,7 +99,7 @@
               <td class="task-delete">
                 <span class="material-icons-outlined"> delete </span>
               </td>
-            </tr>
+            </tr> -->
           </table>
         </div>
       </section>
@@ -107,14 +107,14 @@
         <form>
           <h3>New Project</h3>
           <div class="form-group">
-            <label for="task-name">Project Name</label>
-            <input type="text" id="task-name" />
+            <label for="project-name">Project Name</label>
+            <input type="text" id="project-name" />
           </div>
           <div class="form-group">
-            <button id="addNewTask">Add Task</button>
+            <button id="addNewProject">Add Project</button>
           </div>
           <div class="form-group">
-            <button id="cancelNewTask">Cancel</button>
+            <button class="cancel">Cancel</button>
           </div>
         </form>
       </section>
@@ -138,17 +138,10 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="task-status">Status</label>
-            <select id="task-status">
-              <option value="Pending">Pending</option>
-              <option value="Completed">Completed</option>
-            </select>
-          </div>
-          <div class="form-group">
             <button id="addNewTask">Add Task</button>
           </div>
           <div class="form-group">
-            <button id="cancelNewTask">Cancel</button>
+            <button class="cancel">Cancel</button>
           </div>
         </form>
       </section>
