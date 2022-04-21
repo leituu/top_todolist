@@ -2,7 +2,7 @@ import UI from "./UI.js";
 import Task from "./Task.js";
 import TaskLibrary from "./TaskLibrary.js";
 
-let library = new TaskLibrary();
+const library = new TaskLibrary();
 
 // views
 const mainViews = document.querySelectorAll(".views-list li");
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Switch main views
 mainViews.forEach((view) => {
-  view.addEventListener("click", (e) => {
+  view.addEventListener("click", () => {
     // changes the view
     viewTitle.innerHTML = view.innerText;
     UI.displayView(view.innerText, library);
@@ -81,9 +81,9 @@ addTaskBtn.addEventListener("click", (e) => {
 // Add task
 addTaskFormBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  let taskNameCap =
+  const taskNameCap =
     taskName.value.charAt(0).toUpperCase() + taskName.value.slice(1);
-  let task = new Task(
+  const task = new Task(
     taskNameCap,
     taskDesc,
     taskPriority.value,
@@ -99,7 +99,7 @@ addTaskFormBtn.addEventListener("click", (e) => {
 cancelBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
-    let sect = e.target.parentElement.parentElement.parentElement;
+    const sect = e.target.parentElement.parentElement.parentElement;
     UI.hideForm(sect);
   });
 });

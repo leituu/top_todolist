@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 class TaskLibrary {
   constructor() {
     this.tasks = [
@@ -86,7 +87,7 @@ class TaskLibrary {
     // check if task id already exists
     for (let i = 0; i < this.tasks.length; i++) {
       if (task.id === this.tasks[i].id) {
-        let newId = Math.floor(Math.random() * 1000);
+        const newId = Math.floor(Math.random() * 1000);
         console.log(newId);
         task.setId(newId);
       }
@@ -100,13 +101,10 @@ class TaskLibrary {
     switch (view) {
       case "Home":
         return this.tasks;
-        break;
       case "Today":
         return this.getTodayTasks();
-        break;
       case "Week":
         return this.getWeekTasks();
-        break;
       default:
         break;
     }
