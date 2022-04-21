@@ -2,8 +2,8 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  //   devtools: "inline-source-map",
   entry: "./src/app.js",
+  devtool: "inline-source-map",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
