@@ -1,3 +1,4 @@
+import { nextMonday, previousMonday } from "date-fns";
 /* eslint-disable comma-dangle */
 class TaskLibrary {
   constructor() {
@@ -134,7 +135,10 @@ class TaskLibrary {
 
   getWeekTasks() {
     return this.tasks.filter((task) => {
-      return task.dueDate >= new Date().toISOString().slice(0, 10);
+      return (
+        task.dueDate >= previousMonday(new Date()).toISOString().slice(0, 10) &&
+        task.dueDate < nextMonday(new Date()).toISOString().slice(0, 10)
+      );
     });
   }
 
